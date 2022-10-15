@@ -9,66 +9,80 @@ import Foundation
 import UIKit
 import SnapKit
 
+struct Categories {
+    let title: String?
+    let image: UIImage?
+}
 
 final class SearchViewController: UIViewController {
     
+    private let searchView = SearchView()
+    
     let places: [Place] = [
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
-        Place(placeImage: "example1", placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28.03.2022", placePrice: "2000"),
+        Place(placeImage: ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
+        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
     ]
+    
+   
 
-    private let placesTableView: UITableView = {
-        let tv = UITableView()
-        tv.register(PlacesTableViewCell.self, forCellReuseIdentifier: PlacesTableViewCell.identifier)
-        tv.rowHeight = UIScreen.main.bounds.width + 100
-        return tv
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view = searchView
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
         setupTableView()
-        setupViews()
-        setupLayout()
     }
-    
-    private func setupViews() {
-        //view.addSubview(searchBar)
-        view.addSubview(placesTableView)
-    }
-    
-    private func setupLayout() {
-        placesTableView.snp.makeConstraints { make in
-            make.height.equalTo(UIScreen.main.bounds.height)
-            make.width.equalTo(UIScreen.main.bounds.width)
-        }
-    }
+ 
 }
 
+
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func setupTableView() {
-        placesTableView.delegate = self
-        placesTableView.dataSource = self
+        searchView.placesTableView.delegate = self
+        searchView.placesTableView.dataSource = self
+        
+        searchView.categoriesTableView.delegate = self
+        searchView.categoriesTableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return places.count
+        tableView == searchView.categoriesTableView ? 1 : places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: PlacesTableViewCell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.identifier) as? PlacesTableViewCell else {
-            return UITableViewCell()
+        if tableView == searchView.categoriesTableView {
+            guard let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier) as? CategoryTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            return cell
+            
         }
-        cell.configureCell(place: places[indexPath.row])
-        return cell
+        else if tableView == searchView.placesTableView {
+            guard let cell: PlacesTableViewCell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.identifier) as? PlacesTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.selectionStyle = .none
+            cell.configureCell(place: places[indexPath.row])
+            return cell
+        }
+       return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = places[indexPath.row]
+        print(item)
+        let searchDetailViewController = SearchDetailViewController()//Or initialize it from storyboard.instantiate method
+        searchDetailViewController.searchDetailView.confgiure(with: item)
+        self.navigationController?.pushViewController(searchDetailViewController, animated: true)
     }
 }
+

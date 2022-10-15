@@ -8,7 +8,7 @@
 import Foundation
 
 struct Place {
-    let placeImage: String
+    let placeImage: [String]
     let placeName: String
     let placeRank: Float
     let placeDistance: String

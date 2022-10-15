@@ -10,14 +10,18 @@ import UIKit
 
 final class SearchDetailViewController: UIViewController {
     
-    var place: Place?{
-        didSet{
-            
-        }
-    }
+ 
     let searchDetailView = SearchViewDetail()
     override func viewDidLoad() {
         super.viewDidLoad()
         view = searchDetailView
+        view.backgroundColor = .white
+        searchDetailView.backButton.addTarget(self, action: #selector(backButtonDidTapped), for: .touchUpInside)
     }
+    
+    @objc func backButtonDidTapped() {
+        navigationController?.popViewController(animated: true)
+    }
+
 }
+

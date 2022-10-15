@@ -12,9 +12,11 @@ import SnapKit
 class PlacesTableViewCell: UITableViewCell {
     static let identifier = "PlacesTableViewCell"
     
+    var imgList = [String]()
+    
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.addSubview(placeImageView)
+        view.addSubview(imageCollectionView)
         view.addSubview(placeName)
         view.addSubview(placeRanking)
         view.addSubview(placeDistance)
@@ -23,12 +25,16 @@ class PlacesTableViewCell: UITableViewCell {
         return view
     }()
     
-    lazy var placeImageView: UIImageView = {
-       let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 10
-        return iv
+    let imageCollectionView: UICollectionView = {
+          let layout = UICollectionViewFlowLayout()
+          layout.minimumLineSpacing = 0
+          layout.scrollDirection = .horizontal
+          let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+          cv.register(PlaceImageCollectionViewCell.self, forCellWithReuseIdentifier: PlaceImageCollectionViewCell.identifier)
+          cv.showsHorizontalScrollIndicator = false
+          cv.layer.cornerRadius = 10
+          cv.isPagingEnabled = true
+          return cv
     }()
     
     private lazy var placeName: UILabel = {
@@ -60,37 +66,41 @@ class PlacesTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        imageCollectionView.dataSource = self
+        imageCollectionView.delegate = self
         setupViews()
         setupLayout()
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     private func setupViews() {
-        addSubview(containerView)
+        contentView.addSubview(containerView)
     }
     
     private func setupLayout() {
         containerView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(5)
             make.leading.trailing.equalToSuperview().inset(30)
             make.height.equalTo(UIScreen.main.bounds.width)
         }
         
-        placeImageView.snp.makeConstraints { make in
+        imageCollectionView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(UIScreen.main.bounds.width - 60)
         }
         
         placeName.snp.makeConstraints { make in
-            make.top.equalTo(placeImageView.snp.bottom).offset(10)
+            make.top.equalTo(imageCollectionView.snp.bottom).offset(10)
             make.leading.equalToSuperview()
         }
         
         placeRanking.snp.makeConstraints { make in
-            make.top.equalTo(placeImageView.snp.bottom).offset(10)
+            make.top.equalTo(imageCollectionView.snp.bottom).offset(10)
             make.trailing.equalToSuperview()
         }
         
@@ -114,11 +124,31 @@ class PlacesTableViewCell: UITableViewCell {
 
 extension PlacesTableViewCell {
     func configureCell(place: Place) {
-        placeImageView.image = UIImage(named: place.placeImage)
+        imgList = place.placeImage
         placeName.text = place.placeName
         placeRanking.text = "\(place.placeRank)"
-        placeDistance.text = place.placeDistance
+        placeDistance.text = "\(place.placeDistance) kilometre uzakta"
         placeDate.text = place.placeDate
-        placePrice.text = place.placePrice
+        placePrice.text = "\(place.placePrice) ₺ gece"
     }
+}
+
+extension PlacesTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imgList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let item = imgList[indexPath.row]
+        guard let cell: PlaceImageCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: PlaceImageCollectionViewCell.identifier, for: indexPath) as? PlaceImageCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        cell.configure(with: item)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width - 60, height: UIScreen.main.bounds.width - 60)
+    }
+    
 }

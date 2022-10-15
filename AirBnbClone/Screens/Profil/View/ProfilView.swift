@@ -13,8 +13,8 @@ final class ProfilView: UIView {
     
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.addSubview(pageTitle)
-        view.addSubview(profilView)
+        view.addSubview(settingsTableView)
+        view.backgroundColor = .white
         return view
     }()
     
@@ -43,13 +43,12 @@ final class ProfilView: UIView {
     }()
     
     private lazy var profileImageView: UIImageView = {
-       let imgview = UIImageView()
+        let imgview = UIImageView()
         let image = UIImage(named: "ali_eren")
         imgview.image = image
         imgview.clipsToBounds = true
         imgview.layer.cornerRadius = 30
-      
-       return imgview
+        return imgview
     }()
     
     private lazy var nameStackView: UIStackView = {
@@ -76,7 +75,12 @@ final class ProfilView: UIView {
     //SETTINGS TABLE VIEW
     let settingsTableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
+        table.rowHeight = 70
+        table.backgroundColor = .white
+        table.sectionHeaderHeight = 70
+        table.separatorStyle = .none
+        table.register(CustomHeaderView.self, forHeaderFooterViewReuseIdentifier: CustomHeaderView.identifier)
         return table
     }()
     
@@ -98,21 +102,19 @@ final class ProfilView: UIView {
     }
     
     private func setupLayout() {
-        containerView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(100)
-            make.leading.trailing.equalToSuperview().inset(30)
-            make.bottom.equalToSuperview()
-        }
-        pageTitle.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(10)
-            make.leading.equalToSuperview().inset(10)
-            make.height.equalTo(50)
-        }
-        profilView.snp.makeConstraints { make in
-            make.top.equalTo(pageTitle.snp.bottom).offset(10)
-            make.leading.trailing.equalToSuperview().inset(10)
-            make.height.equalTo(80)
-        }
+        
+        containerView.snp.makeConstraints {  $0.edges.equalToSuperview() }
+        //        pageTitle.snp.makeConstraints { make in
+        //            make.top.equalToSuperview().inset(10)
+        //            make.leading.equalToSuperview().inset(10)
+        //            make.height.equalTo(50)
+        //        }
+        //        profilView.snp.makeConstraints { make in
+        //            make.top.equalTo(pageTitle.snp.bottom).offset(10)
+        //            make.leading.trailing.equalToSuperview().inset(10)
+        //            make.height.equalTo(80)
+        //        }
+        settingsTableView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
     
