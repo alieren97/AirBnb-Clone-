@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import SnapKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class PlacesTableViewCell: UITableViewCell {
     static let identifier = "PlacesTableViewCell"
@@ -17,6 +19,7 @@ class PlacesTableViewCell: UITableViewCell {
     private lazy var containerView: UIView = {
         let view = UIView()
         view.addSubview(imageCollectionView)
+        view.addSubview(favButton)
         view.addSubview(placeName)
         view.addSubview(placeRanking)
         view.addSubview(placeDistance)
@@ -35,6 +38,16 @@ class PlacesTableViewCell: UITableViewCell {
           cv.layer.cornerRadius = 10
           cv.isPagingEnabled = true
           return cv
+    }()
+    
+    private lazy var favButton: UIButton = {
+        let imageView = UIButton()
+        imageView.setImage(UIImage(systemName: "heart"), for: .normal)
+     
+        imageView.tintColor = .white
+        imageView.contentMode = .scaleAspectFit
+        imageView.addTarget(self, action: #selector(didTapFav), for: .touchUpInside)
+        return imageView
     }()
     
     private lazy var placeName: UILabel = {
@@ -94,6 +107,11 @@ class PlacesTableViewCell: UITableViewCell {
             make.height.equalTo(UIScreen.main.bounds.width - 60)
         }
         
+        favButton.snp.makeConstraints { make in
+            make.trailing.top.equalToSuperview().inset(20)
+            make.height.width.equalTo(30)
+        }
+        
         placeName.snp.makeConstraints { make in
             make.top.equalTo(imageCollectionView.snp.bottom).offset(10)
             make.leading.equalToSuperview()
@@ -151,4 +169,10 @@ extension PlacesTableViewCell: UICollectionViewDelegateFlowLayout, UICollectionV
         return CGSize(width: UIScreen.main.bounds.width - 60, height: UIScreen.main.bounds.width - 60)
     }
     
+    @objc func didTapFav() {
+//        Auth.auth().currentUser != nil{
+//            Firestore.firestore().collection("users")
+//        }
+        favButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+    }
 }

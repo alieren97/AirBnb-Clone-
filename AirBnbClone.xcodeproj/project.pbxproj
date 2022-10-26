@@ -13,7 +13,7 @@
 		1943F04828DFB86A00FC1E24 /* Layoutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943F04728DFB86A00FC1E24 /* Layoutable.swift */; };
 		1977058228F964960074D9D7 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977058128F964960074D9D7 /* SettingTableViewCell.swift */; };
 		1977058528F9C8340074D9D7 /* CustomHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977058428F9C8340074D9D7 /* CustomHeaderView.swift */; };
-		1977058728F9D8260074D9D7 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977058628F9D8260074D9D7 /* SearchView.swift */; };
+		1977058728F9D8260074D9D7 /* PlacesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977058628F9D8260074D9D7 /* PlacesView.swift */; };
 		1977058928F9E0CC0074D9D7 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977058828F9E0CC0074D9D7 /* CategoryCollectionViewCell.swift */; };
 		1977058B28F9E5870074D9D7 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977058A28F9E5870074D9D7 /* CategoryTableViewCell.swift */; };
 		197E374528DF9007009C104B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E374428DF9007009C104B /* AppDelegate.swift */; };
@@ -21,17 +21,33 @@
 		197E375128DF9009009C104B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 197E375028DF9009009C104B /* Assets.xcassets */; };
 		197E375428DF9009009C104B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 197E375228DF9009009C104B /* LaunchScreen.storyboard */; };
 		197E376328DF9D67009C104B /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E376228DF9D67009C104B /* MainTabController.swift */; };
-		197E376528DF9D86009C104B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E376428DF9D86009C104B /* SearchViewController.swift */; };
+		197E376528DF9D86009C104B /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E376428DF9D86009C104B /* PlacesViewController.swift */; };
 		197E376728DF9D8D009C104B /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E376628DF9D8D009C104B /* FavoritesViewController.swift */; };
 		197E376928DF9D99009C104B /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E376828DF9D98009C104B /* TripsViewController.swift */; };
 		197E376B28DF9DA2009C104B /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E376A28DF9DA2009C104B /* MessagesViewController.swift */; };
 		197E376D28DF9DCA009C104B /* ProfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197E376C28DF9DCA009C104B /* ProfilViewController.swift */; };
+		1983DF7129031E7400B2B631 /* PastSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983DF7029031E7400B2B631 /* PastSearchTableViewCell.swift */; };
+		1983DF7329041EE700B2B631 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1983DF7229041EE700B2B631 /* GoogleService-Info.plist */; };
+		1983DF7629041F6C00B2B631 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1983DF7529041F6C00B2B631 /* FirebaseAuth */; };
+		1983DF7829041F6C00B2B631 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1983DF7729041F6C00B2B631 /* FirebaseDatabaseSwift */; };
+		1983DF7A29041F6C00B2B631 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1983DF7929041F6C00B2B631 /* FirebaseFirestoreSwift */; };
+		1983DF7C29041F6C00B2B631 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1983DF7B29041F6C00B2B631 /* FirebaseRemoteConfigSwift */; };
+		1983DF7E29041F6C00B2B631 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1983DF7D29041F6C00B2B631 /* FirebaseStorage */; };
+		1983DF84290428BC00B2B631 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983DF83290428BC00B2B631 /* AuthController.swift */; };
+		1983DF86290428D800B2B631 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983DF85290428D800B2B631 /* AuthView.swift */; };
+		1983DF8829042C5300B2B631 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983DF8729042C5300B2B631 /* LoginViewController.swift */; };
+		1983DF8A29042C5C00B2B631 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1983DF8929042C5C00B2B631 /* LoginView.swift */; };
 		198A3A1428FAEEE30067668A /* PlaceImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A3A1328FAEEE30067668A /* PlaceImageCollectionViewCell.swift */; };
 		19AAE2C428F5FE4700BE6B4C /* SearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AAE2C328F5FE4700BE6B4C /* SearchDetailViewController.swift */; };
 		19AAE2C628F5FE6500BE6B4C /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AAE2C528F5FE6500BE6B4C /* SearchDetailView.swift */; };
 		19AAE2C928F5FF1100BE6B4C /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AAE2C828F5FF1100BE6B4C /* ProfilView.swift */; };
 		19E2451428FB46F600E3EF16 /* SearchDetailImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E2451328FB46F600E3EF16 /* SearchDetailImageCollectionViewCell.swift */; };
 		19E2451628FB4AD900E3EF16 /* SearchDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E2451528FB4AD900E3EF16 /* SearchDetail.swift */; };
+		19F72F4629067A74009CF4F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72F4529067A74009CF4F1 /* User.swift */; };
+		19FB030928FF2C2E00133561 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FB030828FF2C2E00133561 /* SearchViewController.swift */; };
+		19FB030B28FF2C8200133561 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FB030A28FF2C8200133561 /* SearchView.swift */; };
+		19FB030E28FF32F200133561 /* ContinentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FB030D28FF32F200133561 /* ContinentsCollectionViewCell.swift */; };
+		19FB031028FF348200133561 /* Continents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FB030F28FF348200133561 /* Continents.swift */; };
 		3A0EECFB929D83FC689DDDAD /* Pods_AirBnbClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5786B97897516337602764A3 /* Pods_AirBnbClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +58,7 @@
 		1943F04728DFB86A00FC1E24 /* Layoutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layoutable.swift; sourceTree = "<group>"; };
 		1977058128F964960074D9D7 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		1977058428F9C8340074D9D7 /* CustomHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHeaderView.swift; sourceTree = "<group>"; };
-		1977058628F9D8260074D9D7 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		1977058628F9D8260074D9D7 /* PlacesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesView.swift; sourceTree = "<group>"; };
 		1977058828F9E0CC0074D9D7 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1977058A28F9E5870074D9D7 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		197E374128DF9007009C104B /* AirBnbClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirBnbClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,17 +68,28 @@
 		197E375328DF9009009C104B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		197E375528DF9009009C104B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		197E376228DF9D67009C104B /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
-		197E376428DF9D86009C104B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		197E376428DF9D86009C104B /* PlacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		197E376628DF9D8D009C104B /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		197E376828DF9D98009C104B /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
 		197E376A28DF9DA2009C104B /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		197E376C28DF9DCA009C104B /* ProfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilViewController.swift; sourceTree = "<group>"; };
+		1983DF7029031E7400B2B631 /* PastSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastSearchTableViewCell.swift; sourceTree = "<group>"; };
+		1983DF7229041EE700B2B631 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1983DF83290428BC00B2B631 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		1983DF85290428D800B2B631 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		1983DF8729042C5300B2B631 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1983DF8929042C5C00B2B631 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		198A3A1328FAEEE30067668A /* PlaceImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		19AAE2C328F5FE4700BE6B4C /* SearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailViewController.swift; sourceTree = "<group>"; };
 		19AAE2C528F5FE6500BE6B4C /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
 		19AAE2C828F5FF1100BE6B4C /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
 		19E2451328FB46F600E3EF16 /* SearchDetailImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		19E2451528FB4AD900E3EF16 /* SearchDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetail.swift; sourceTree = "<group>"; };
+		19F72F4529067A74009CF4F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		19FB030828FF2C2E00133561 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		19FB030A28FF2C8200133561 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		19FB030D28FF32F200133561 /* ContinentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinentsCollectionViewCell.swift; sourceTree = "<group>"; };
+		19FB030F28FF348200133561 /* Continents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Continents.swift; sourceTree = "<group>"; };
 		5786B97897516337602764A3 /* Pods_AirBnbClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AirBnbClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9707D92F6065EB7BF8773952 /* Pods-AirBnbClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBnbClone.release.xcconfig"; path = "Target Support Files/Pods-AirBnbClone/Pods-AirBnbClone.release.xcconfig"; sourceTree = "<group>"; };
 		C9E0585FCB8B3021385A73E5 /* Pods-AirBnbClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AirBnbClone.debug.xcconfig"; path = "Target Support Files/Pods-AirBnbClone/Pods-AirBnbClone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,7 +100,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1983DF7829041F6C00B2B631 /* FirebaseDatabaseSwift in Frameworks */,
 				3A0EECFB929D83FC689DDDAD /* Pods_AirBnbClone.framework in Frameworks */,
+				1983DF7C29041F6C00B2B631 /* FirebaseRemoteConfigSwift in Frameworks */,
+				1983DF7629041F6C00B2B631 /* FirebaseAuth in Frameworks */,
+				1983DF7A29041F6C00B2B631 /* FirebaseFirestoreSwift in Frameworks */,
+				1983DF7E29041F6C00B2B631 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +196,50 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		1983DF6F29031E6500B2B631 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1983DF7029031E7400B2B631 /* PastSearchTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		1983DF7F290428AB00B2B631 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				1983DF82290428B400B2B631 /* Controller */,
+				1983DF81290428B000B2B631 /* Model */,
+				1983DF80290428AE00B2B631 /* View */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		1983DF80290428AE00B2B631 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1983DF85290428D800B2B631 /* AuthView.swift */,
+				1983DF8929042C5C00B2B631 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1983DF81290428B000B2B631 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19F72F4529067A74009CF4F1 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1983DF82290428B400B2B631 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1983DF83290428BC00B2B631 /* AuthController.swift */,
+				1983DF8729042C5300B2B631 /* LoginViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		198A3A1528FAEFA40067668A /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,8 +266,10 @@
 		19AAE2A728F5F6DB00BE6B4C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				19AAE2BF28F5FE3100BE6B4C /* SearchDetail */,
-				19AAE2B128F5F72F00BE6B4C /* Search */,
+				1983DF7F290428AB00B2B631 /* Auth */,
+				19FB030428FF2C1B00133561 /* Search */,
+				19AAE2BF28F5FE3100BE6B4C /* PlaceDetail */,
+				19AAE2B128F5F72F00BE6B4C /* Places */,
 				19AAE2B028F5F72D00BE6B4C /* Messages */,
 				19AAE2AF28F5F72A00BE6B4C /* Favorites */,
 				19AAE2AE28F5F72700BE6B4C /* Profil */,
@@ -220,6 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				197E375528DF9009009C104B /* Info.plist */,
+				1983DF7229041EE700B2B631 /* GoogleService-Info.plist */,
 			);
 			path = Plists;
 			sourceTree = "<group>";
@@ -277,14 +356,14 @@
 			path = Messages;
 			sourceTree = "<group>";
 		};
-		19AAE2B128F5F72F00BE6B4C /* Search */ = {
+		19AAE2B128F5F72F00BE6B4C /* Places */ = {
 			isa = PBXGroup;
 			children = (
 				19AAE2B228F5F73800BE6B4C /* Model */,
 				19AAE2B428F5F73D00BE6B4C /* View */,
 				19AAE2B328F5F73A00BE6B4C /* Controller */,
 			);
-			path = Search;
+			path = Places;
 			sourceTree = "<group>";
 		};
 		19AAE2B228F5F73800BE6B4C /* Model */ = {
@@ -298,7 +377,7 @@
 		19AAE2B328F5F73A00BE6B4C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				197E376428DF9D86009C104B /* SearchViewController.swift */,
+				197E376428DF9D86009C104B /* PlacesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -308,7 +387,7 @@
 			children = (
 				198A3A1528FAEFA40067668A /* CollectionViewCell */,
 				19AAE2B928F5F93F00BE6B4C /* TableViewCell */,
-				1977058628F9D8260074D9D7 /* SearchView.swift */,
+				1977058628F9D8260074D9D7 /* PlacesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -390,14 +469,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		19AAE2BF28F5FE3100BE6B4C /* SearchDetail */ = {
+		19AAE2BF28F5FE3100BE6B4C /* PlaceDetail */ = {
 			isa = PBXGroup;
 			children = (
 				19AAE2C228F5FE3C00BE6B4C /* Controller */,
 				19AAE2C128F5FE3800BE6B4C /* View */,
 				19AAE2C028F5FE3500BE6B4C /* Model */,
 			);
-			path = SearchDetail;
+			path = PlaceDetail;
 			sourceTree = "<group>";
 		};
 		19AAE2C028F5FE3500BE6B4C /* Model */ = {
@@ -443,6 +522,50 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		19FB030428FF2C1B00133561 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				19FB030728FF2C2600133561 /* Model */,
+				19FB030628FF2C2400133561 /* View */,
+				19FB030528FF2C2000133561 /* Controller */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		19FB030528FF2C2000133561 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				19FB030828FF2C2E00133561 /* SearchViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		19FB030628FF2C2400133561 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1983DF6F29031E6500B2B631 /* TableViewCell */,
+				19FB030C28FF32BE00133561 /* CollectionViewCell */,
+				19FB030A28FF2C8200133561 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		19FB030728FF2C2600133561 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19FB030F28FF348200133561 /* Continents.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		19FB030C28FF32BE00133561 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				19FB030D28FF32F200133561 /* ContinentsCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		BCB4CF29DED019F1DB055E03 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +601,13 @@
 			dependencies = (
 			);
 			name = AirBnbClone;
+			packageProductDependencies = (
+				1983DF7529041F6C00B2B631 /* FirebaseAuth */,
+				1983DF7729041F6C00B2B631 /* FirebaseDatabaseSwift */,
+				1983DF7929041F6C00B2B631 /* FirebaseFirestoreSwift */,
+				1983DF7B29041F6C00B2B631 /* FirebaseRemoteConfigSwift */,
+				1983DF7D29041F6C00B2B631 /* FirebaseStorage */,
+			);
 			productName = AirBnbClone;
 			productReference = 197E374128DF9007009C104B /* AirBnbClone.app */;
 			productType = "com.apple.product-type.application";
@@ -506,6 +636,9 @@
 				Base,
 			);
 			mainGroup = 197E373828DF9007009C104B;
+			packageReferences = (
+				1983DF7429041F6C00B2B631 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 197E374228DF9007009C104B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -522,6 +655,7 @@
 			files = (
 				197E375428DF9009009C104B /* LaunchScreen.storyboard in Resources */,
 				197E375128DF9009009C104B /* Assets.xcassets in Resources */,
+				1983DF7329041EE700B2B631 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,28 +709,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				1943F04828DFB86A00FC1E24 /* Layoutable.swift in Sources */,
+				19FB030E28FF32F200133561 /* ContinentsCollectionViewCell.swift in Sources */,
 				19AAE2C628F5FE6500BE6B4C /* SearchDetailView.swift in Sources */,
-				197E376528DF9D86009C104B /* SearchViewController.swift in Sources */,
+				197E376528DF9D86009C104B /* PlacesViewController.swift in Sources */,
 				197E374528DF9007009C104B /* AppDelegate.swift in Sources */,
 				197E376D28DF9DCA009C104B /* ProfilViewController.swift in Sources */,
 				19E2451428FB46F600E3EF16 /* SearchDetailImageCollectionViewCell.swift in Sources */,
 				197E376928DF9D99009C104B /* TripsViewController.swift in Sources */,
 				1977058528F9C8340074D9D7 /* CustomHeaderView.swift in Sources */,
+				1983DF7129031E7400B2B631 /* PastSearchTableViewCell.swift in Sources */,
 				1977058228F964960074D9D7 /* SettingTableViewCell.swift in Sources */,
 				198A3A1428FAEEE30067668A /* PlaceImageCollectionViewCell.swift in Sources */,
 				1943F03828DFA3EF00FC1E24 /* PlacesTableViewCell.swift in Sources */,
+				1983DF8829042C5300B2B631 /* LoginViewController.swift in Sources */,
+				19FB031028FF348200133561 /* Continents.swift in Sources */,
 				1943F04628DFB86600FC1E24 /* Layouting.swift in Sources */,
-				1977058728F9D8260074D9D7 /* SearchView.swift in Sources */,
+				1977058728F9D8260074D9D7 /* PlacesView.swift in Sources */,
 				197E376328DF9D67009C104B /* MainTabController.swift in Sources */,
 				19E2451628FB4AD900E3EF16 /* SearchDetail.swift in Sources */,
 				197E374F28DF9007009C104B /* AirBnbClone.xcdatamodeld in Sources */,
 				197E376728DF9D8D009C104B /* FavoritesViewController.swift in Sources */,
 				19AAE2C928F5FF1100BE6B4C /* ProfilView.swift in Sources */,
+				19FB030928FF2C2E00133561 /* SearchViewController.swift in Sources */,
 				1977058B28F9E5870074D9D7 /* CategoryTableViewCell.swift in Sources */,
 				1943F03A28DFAB7800FC1E24 /* Place.swift in Sources */,
 				19AAE2C428F5FE4700BE6B4C /* SearchDetailViewController.swift in Sources */,
+				1983DF84290428BC00B2B631 /* AuthController.swift in Sources */,
+				1983DF86290428D800B2B631 /* AuthView.swift in Sources */,
 				197E376B28DF9DA2009C104B /* MessagesViewController.swift in Sources */,
+				19FB030B28FF2C8200133561 /* SearchView.swift in Sources */,
+				1983DF8A29042C5C00B2B631 /* LoginView.swift in Sources */,
 				1977058928F9E0CC0074D9D7 /* CategoryCollectionViewCell.swift in Sources */,
+				19F72F4629067A74009CF4F1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -806,6 +950,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1983DF7429041F6C00B2B631 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1983DF7529041F6C00B2B631 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1983DF7429041F6C00B2B631 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		1983DF7729041F6C00B2B631 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1983DF7429041F6C00B2B631 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		1983DF7929041F6C00B2B631 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1983DF7429041F6C00B2B631 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		1983DF7B29041F6C00B2B631 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1983DF7429041F6C00B2B631 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		1983DF7D29041F6C00B2B631 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1983DF7429041F6C00B2B631 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		197E374D28DF9007009C104B /* AirBnbClone.xcdatamodeld */ = {

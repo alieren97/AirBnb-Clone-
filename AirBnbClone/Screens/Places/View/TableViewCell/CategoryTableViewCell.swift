@@ -33,6 +33,8 @@ class CategoryTableViewCell: UITableViewCell {
           cv.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
           cv.showsHorizontalScrollIndicator = false
           cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.scrollToNextItem()
+       
           return cv
       }()
     
@@ -42,6 +44,7 @@ class CategoryTableViewCell: UITableViewCell {
         collectionView.dataSource = self
         setupViews()
         setupLayout()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -65,16 +68,22 @@ extension CategoryTableViewCell:UICollectionViewDelegate,UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = categories[indexPath.row]
-        selectedIndex = indexPath.item
+        
+        selectedIndex = indexPath.row
         guard let cell: CategoryCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as? CategoryCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.configure(with: item)
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 100)
-       }
+    }
+    
+   
+
+   
 //    
 //    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 //        self.selectedIndex = indexPath.item
@@ -85,4 +94,22 @@ extension CategoryTableViewCell:UICollectionViewDelegate,UICollectionViewDataSou
 //        }
 //
 //    }
+    
+}
+
+
+extension UICollectionView {
+    func scrollToNextItem() {
+        let contentOffset = CGFloat(floor(self.contentOffset.x + self.bounds.size.width))
+        self.moveToFrame(contentOffset: contentOffset)
+    }
+
+    func scrollToPreviousItem() {
+        let contentOffset = CGFloat(floor(self.contentOffset.x - self.bounds.size.width))
+        self.moveToFrame(contentOffset: contentOffset)
+    }
+
+    func moveToFrame(contentOffset : CGFloat) {
+        self.setContentOffset(CGPoint(x: contentOffset, y: self.contentOffset.y), animated: true)
+    }
 }

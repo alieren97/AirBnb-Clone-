@@ -36,5 +36,149 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "39BF74C4-779C-4024-B4CA-11E4D33079B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnbClone/Screens/Search/View/SearchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "setupViews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6565DA06-2714-426C-9C0F-21A2FED7EAC3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnbClone/Screens/SearchDetail/View/SearchDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "setupLayout()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6565DA06-2714-426C-9C0F-21A2FED7EAC3 - 8d766acdab1b0866"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnbClone.SearchViewDetail.setupLayout() -&gt; ()"
+                  moduleName = "AirBnbClone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alieren/Desktop/Desktop%20-%20Ali%E2%80%99s%20MacBook%20Pro%20(2)/IOS%20Projects/AirBnbClone/AirBnbClone/Screens/SearchDetail/View/SearchDetailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "187"
+                  endingLineNumber = "187"
+                  offsetFromSymbolStart = "684">
+               </Location>
+               <Location
+                  uuid = "6565DA06-2714-426C-9C0F-21A2FED7EAC3 - 70d765e2f68574de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #10 (SnapKit.ConstraintMaker) -&gt; () in AirBnbClone.SearchViewDetail.setupLayout() -&gt; ()"
+                  moduleName = "AirBnbClone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alieren/Desktop/Desktop%20-%20Ali%E2%80%99s%20MacBook%20Pro%20(2)/IOS%20Projects/AirBnbClone/AirBnbClone/Screens/SearchDetail/View/SearchDetailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "188"
+                  endingLineNumber = "188"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D721C58D-B9E9-4E72-8653-E8CF3D3A99A9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnbClone/Screens/SearchDetail/View/SearchDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
+            landmarkName = "setupLayout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1DCBDAB-85F4-4233-980B-509039672C04"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnbClone/Screens/Search/View/SearchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "04D7407A-426E-4312-9814-B044B3DB1106"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AirBnbClone/Screens/Search/View/SearchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
+            landmarkName = "setupLayouts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "04D7407A-426E-4312-9814-B044B3DB1106 - 90c2ab21e2957768"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "AirBnbClone.SearchView.setupLayouts() -&gt; ()"
+                  moduleName = "AirBnbClone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alieren/Desktop/Desktop%20-%20Ali%E2%80%99s%20MacBook%20Pro%20(2)/IOS%20Projects/AirBnbClone/AirBnbClone/Screens/Search/View/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "135"
+                  endingLineNumber = "135"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "04D7407A-426E-4312-9814-B044B3DB1106 - 84221a0706b13a65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #5 (SnapKit.ConstraintMaker) -&gt; () in AirBnbClone.SearchView.setupLayouts() -&gt; ()"
+                  moduleName = "AirBnbClone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alieren/Desktop/Desktop%20-%20Ali%E2%80%99s%20MacBook%20Pro%20(2)/IOS%20Projects/AirBnbClone/AirBnbClone/Screens/Search/View/SearchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "136"
+                  endingLineNumber = "136"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

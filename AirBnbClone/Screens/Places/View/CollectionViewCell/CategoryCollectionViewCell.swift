@@ -15,7 +15,8 @@ final class CategoryCollectionViewCell : UICollectionViewCell {
     override var isSelected: Bool {
         didSet {
             categoryImageView.tintColor = isSelected ? UIColor.black : UIColor.gray
-            categoryTitle.tintColor = isHighlighted ? UIColor.black : UIColor.gray
+            categoryTitle.textColor = isSelected ? UIColor.black : UIColor.gray
+            underlineBarView.isHidden = isSelected ? false : true
         }
     }
     
@@ -30,6 +31,8 @@ final class CategoryCollectionViewCell : UICollectionViewCell {
        let label = UILabel()
         label.numberOfLines = 0
         label.textAlignment = .center
+        
+        label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 11)
        return label
     }()
@@ -37,6 +40,7 @@ final class CategoryCollectionViewCell : UICollectionViewCell {
     lazy var underlineBarView: UIView = {
        let view = UIView()
         view.backgroundColor = .black
+        view.isHidden = true
         return view
     }()
     
@@ -77,7 +81,7 @@ final class CategoryCollectionViewCell : UICollectionViewCell {
     }
 }
 
-extension CategoryCollectionViewCell {
+extension CategoryCollectionViewCell {
     func configure(with model: Categories) {
         categoryImageView.image = model.image
         categoryTitle.text = model.title

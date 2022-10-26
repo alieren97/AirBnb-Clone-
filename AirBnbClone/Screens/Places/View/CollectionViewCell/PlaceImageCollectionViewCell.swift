@@ -21,13 +21,7 @@ final class PlaceImageCollectionViewCell: UICollectionViewCell {
         return imageView
     }()
     
-    private lazy var favButton: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(systemName: "heart")
-        imageView.tintColor = .white
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
+   
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -41,15 +35,11 @@ final class PlaceImageCollectionViewCell: UICollectionViewCell {
     
     private func setupViews() {
         contentView.addSubview(placeImageView)
-        contentView.addSubview(favButton)
+        
     }
     private func setupLayout() {
         placeImageView.snp.makeConstraints {  $0.edges.equalToSuperview() }
-        
-        favButton.snp.makeConstraints { make in
-            make.trailing.top.equalToSuperview().inset(20)
-            make.height.width.equalTo(30)
-        }
+ 
     }
 }
 

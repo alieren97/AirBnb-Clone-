@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import FirebaseAuth
 
 class MainTabController: UITabBarController {
     
@@ -17,7 +18,7 @@ class MainTabController: UITabBarController {
     }
     
     func configureViewControllers() {
-        let feed = SearchViewController()
+        let feed = PlacesViewController()
         let nav1 = templateNavigationController(image:  UIImage(systemName: "magnifyingglass")!, title: "Kesfedin", rootViewController: feed)
         
         
@@ -30,9 +31,8 @@ class MainTabController: UITabBarController {
         let conversations = MessagesViewController()
         let nav4 = templateNavigationController(image:  UIImage(systemName: "message")!, title: "Gelen Kutusu", rootViewController: conversations)
         
-        let profile = ProfilViewController()
+        let profile = Auth.auth().currentUser != nil ? ProfilViewController() : AuthController()
         let nav5 = templateNavigationController(image:  UIImage(systemName: "person.circle")!, title: "Profil", rootViewController: profile)
-        
         viewControllers = [nav1,nav2,nav3,nav4,nav5]
     }
     

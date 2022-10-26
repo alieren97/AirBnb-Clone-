@@ -1,88 +1,102 @@
 //
-//  SearchController.swift
+//  SearchViewController.swift
 //  AirBnbClone
 //
-//  Created by Ali Eren on 24.09.2022.
+//  Created by Ali Eren on 18.10.2022.
 //
 
 import Foundation
 import UIKit
 import SnapKit
 
-struct Categories {
-    let title: String?
-    let image: UIImage?
-}
-
 final class SearchViewController: UIViewController {
-    
-    private let searchView = SearchView()
-    
-    let places: [Place] = [
-        Place(placeImage: ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-        Place(placeImage:  ["example1","example2","example3","example4"], placeName: "Guyonvelle,Fransa", placeRank: 4.5, placeDistance: "2.329", placeDate: "28 Ek-6 Kas", placePrice: "2000"),
-    ]
-    
-   
-
-    
+    var popView: Bool = false
+    let searchView = SearchView()
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
         view = searchView
-        view.backgroundColor = .white
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        setupTableView()
-    }
- 
-}
-
-
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
-    func setupTableView() {
-        searchView.placesTableView.delegate = self
-        searchView.placesTableView.dataSource = self
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationController?.tabBarController?.tabBar.isHidden = true
         
-        searchView.categoriesTableView.delegate = self
-        searchView.categoriesTableView.dataSource = self
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableView == searchView.categoriesTableView ? 1 : places.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if tableView == searchView.categoriesTableView {
-            guard let cell: CategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier) as? CategoryTableViewCell else {
-                return UITableViewCell()
-            }
-            
-            return cell
-            
-        }
-        else if tableView == searchView.placesTableView {
-            guard let cell: PlacesTableViewCell = tableView.dequeueReusableCell(withIdentifier: PlacesTableViewCell.identifier) as? PlacesTableViewCell else {
-                return UITableViewCell()
-            }
-            cell.selectionStyle = .none
-            cell.configureCell(place: places[indexPath.row])
-            return cell
-        }
-       return UITableViewCell()
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = places[indexPath.row]
-        print(item)
-        let searchDetailViewController = SearchDetailViewController()//Or initialize it from storyboard.instantiate method
-        searchDetailViewController.searchDetailView.confgiure(with: item)
-        self.navigationController?.pushViewController(searchDetailViewController, animated: true)
-    }
-}
+        let backbıtem = UIBarButtonItem(customView: searchView.closeButton)
+        searchView.closeButton.addTarget(self, action: #selector(backButtonDidTapped), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = backbıtem
+        
+        searchViewTapped()
 
+    }
+    
+    @objc func backButtonDidTapped() {
+        if(popView == true) {
+
+            UIView.animate(withDuration: 0.5) {
+                self.searchView.searchContainerView.snp.remakeConstraints { remake in
+                    remake.top.equalToSuperview().inset(100)
+                    remake.leading.trailing.equalToSuperview().inset(10)
+                    remake.height.equalTo(UIScreen.main.bounds.width - 20)
+                }
+                self.searchView.searchView.snp.remakeConstraints { remake in
+                    remake.top.equalTo(self.searchView.whereToGoLabel.snp.bottom).offset(10)
+                    remake.trailing.leading.equalToSuperview().inset(10)
+                    remake.height.equalTo(60)
+                }
+                self.searchView.layoutIfNeeded()
+            }
+            UIView.animate(withDuration: 0.5) {
+                self.searchView.searchTextField.isEnabled = false
+                self.searchView.whereToGoLabel.isHidden = false
+                self.searchView.collectionView.isHidden = false
+                self.searchView.dateView.isHidden = false
+                self.searchView.guestsView.isHidden = false
+                self.searchView.bottomContainerView.isHidden = false
+            }
+            
+            searchView.closeButton.setImage(UIImage(systemName: "xmark.circle"), for: .normal)
+            popView = false
+            
+            print(popView)
+        } else {
+            navigationController?.popViewController(animated: true)
+            navigationController?.setNavigationBarHidden(true, animated: false)
+                                                         navigationController?.tabBarController?.tabBar.isHidden = false
+            popView = false
+        }
+      
+    }
+    
+    func searchViewTapped() {
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(targetViewDidTapped))
+        gesture.numberOfTapsRequired = 1
+        searchView.searchView.addGestureRecognizer(gesture)
+        print(popView)
+        popView = true
+    }
+    
+    @objc func targetViewDidTapped() {
+        searchView.searchTextField.isEnabled = true
+        searchView.whereToGoLabel.isHidden = true
+        searchView.collectionView.isHidden = true
+        searchView.dateView.isHidden = true
+        searchView.guestsView.isHidden = true
+        searchView.bottomContainerView.isHidden = true
+        
+        UIView.animate(withDuration: 0.5) {
+            self.searchView.searchContainerView.snp.remakeConstraints { remake in
+                remake.top.equalToSuperview().inset(100)
+                remake.leading.trailing.equalToSuperview()
+                remake.height.equalTo(UIScreen.main.bounds.height - 100)
+            }
+            self.searchView.searchView.snp.remakeConstraints { remake in
+                remake.top.equalToSuperview().inset(30)
+                remake.trailing.leading.equalToSuperview().inset(10)
+                remake.height.equalTo(60)
+            }
+            self.searchView.layoutIfNeeded()
+        }
+        
+        searchView.closeButton.setImage(UIImage(systemName: "arrow.left"), for: .normal)
+    }
+    
+    
+}
